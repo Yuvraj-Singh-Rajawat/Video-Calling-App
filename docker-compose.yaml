@@ -1,0 +1,20 @@
+version: '3.8'
+
+services: 
+  frontend:
+    build: Frontend
+    ports:
+      - "5173:5173"
+    networks:
+      - video-app
+
+  backend:
+    build: Backend
+    ports: 
+      - "8000:8000"
+    networks:
+      - video-app
+
+networks:
+  video-app:
+    driver: bridge
